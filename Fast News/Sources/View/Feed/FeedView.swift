@@ -9,6 +9,7 @@ import UIKit
 
 protocol FeedViewDelegate {
     func didTouch(cell: FeedCell, indexPath: IndexPath)
+    func loadMoreNews()
 }
 
 class FeedView: UIView {
@@ -61,5 +62,11 @@ extension FeedView: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.cellForRow(at: indexPath) as? FeedCell else { fatalError("Cell is not of type FeedCell!") }
         
         delegate?.didTouch(cell: cell, indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == viewModels.count-1 {
+            delegate?.loadMoreNews()
+        }
     }
 }

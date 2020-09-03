@@ -16,9 +16,10 @@ class FeedViewController: UIViewController {
     
     //MARK: - Properties
     
+    var viewModels: [HotNewsViewModel] = [HotNewsViewModel]()
+    
     var hotNews: [HotNews] = [HotNews]() {
         didSet {
-            var viewModels: [HotNewsViewModel] = [HotNewsViewModel]()
             _ = hotNews.map { (news) in
                 viewModels.append(HotNewsViewModel(hotNews: news))
             }
@@ -34,19 +35,34 @@ class FeedViewController: UIViewController {
         return view
     }
     
+    var fetching = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Fast News"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        HotNewsProvider.shared.hotNews { (completion) in
-            do {
-                let hotNews = try completion()
-                
-                self.hotNews = hotNews
-            } catch {
-                print(error.localizedDescription)
+        loadNews()
+    }
+    
+    func loadNews(){
+        
+        if !fetching {
+            fetching = true
+            
+            DispatchQueue.main.async {
+                HotNewsProvider.shared.hotNews { (completion) in
+                    do {
+                        let hotNews = try completion()
+                        
+                        self.hotNews = hotNews
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    
+                    self.fetching = false
+                }
             }
         }
     }
@@ -60,6 +76,10 @@ class FeedViewController: UIViewController {
 }
 
 extension FeedViewController: FeedViewDelegate {
+    func loadMoreNews() {
+        self.loadNews()
+    }
+    
     func didTouch(cell: FeedCell, indexPath: IndexPath) {
         self.performSegue(withIdentifier: kToDetails, sender: self.mainView.viewModels[indexPath.row])
     }
