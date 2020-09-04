@@ -18,10 +18,17 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    var url: String?
+    var delegate: FeedViewDelegate?
     
     //MARK: - Public Methods
     
+    @IBAction func didTapShareButton(_ sender: Any) {
+        delegate?.didTapShare(url: url)
+    }
+        
     func setup(hotNewsViewModel: HotNewsViewModel) {
+        url = hotNewsViewModel.url
         authorLabel.text = hotNewsViewModel.author
         createdAtLabel.text = hotNewsViewModel.createdAt
         thumbnailImageView.image = hotNewsViewModel.image
@@ -32,6 +39,7 @@ class FeedCell: UITableViewCell {
     
     func setup(viewModel: TypeProtocol) {
         guard let hotNewsViewModel = viewModel as? HotNewsViewModel else { return }
+        url = hotNewsViewModel.url
         authorLabel.text = hotNewsViewModel.author
         createdAtLabel.text = hotNewsViewModel.createdAt
         thumbnailImageView.image = hotNewsViewModel.image
