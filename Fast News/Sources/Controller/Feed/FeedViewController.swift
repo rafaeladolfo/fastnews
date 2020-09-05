@@ -76,6 +76,13 @@ class FeedViewController: UIViewController {
 }
 
 extension FeedViewController: FeedViewDelegate {
+    func didTapShare(url: String?) {
+        if url == nil { return }
+        let activityVC = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
     func loadMoreNews() {
         self.loadNews()
     }

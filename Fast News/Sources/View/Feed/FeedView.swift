@@ -10,6 +10,7 @@ import UIKit
 protocol FeedViewDelegate {
     func didTouch(cell: FeedCell, indexPath: IndexPath)
     func loadMoreNews()
+    func didTapShare(url: String?)
 }
 
 class FeedView: UIView {
@@ -50,6 +51,7 @@ extension FeedView: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell else { fatalError("Cell is not of type FeedCell!") }
         
         cell.setup(hotNewsViewModel: viewModels[indexPath.row])
+        cell.delegate = delegate
         
         return cell
     }
