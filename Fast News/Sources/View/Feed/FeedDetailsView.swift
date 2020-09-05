@@ -53,6 +53,7 @@ extension FeedDetailsView: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell else { fatalError("Cell is not of type FeedCell!") }
             
             cell.setup(viewModel: viewModel)
+            cell.delegate = delegate
             
             return cell
         case .comment:
