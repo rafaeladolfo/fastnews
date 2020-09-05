@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		37CB7226250071DC006BB426 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB7225250071DC006BB426 /* Listing.swift */; };
+		37E2C40B2504317700043FC6 /* InMemoryDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C40A2504317700043FC6 /* InMemoryDb.swift */; };
+		37E2C40E25043A7200043FC6 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C40D25043A7200043FC6 /* NetworkStatus.swift */; };
 		5BE18F4B6D78682508383294 /* Pods_Fast_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7A0BF16E18EB9FDF7EA8A0 /* Pods_Fast_NewsUITests.framework */; };
 		94E705BA50FC4B05C834D212 /* Pods_Fast_NewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E514EA261D3FA9642D06EE /* Pods_Fast_NewsTests.framework */; };
 		9DB8AAEF586A4F7470B232C0 /* Pods_Fast_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE6AB26323769D03C8BADE1 /* Pods_Fast_News.framework */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		37CB7225250071DC006BB426 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		37E2C40A2504317700043FC6 /* InMemoryDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDb.swift; sourceTree = "<group>"; };
+		37E2C40D25043A7200043FC6 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
 		526215A6F93AD27F7E06CB76 /* Pods-Fast NewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast NewsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fast NewsUITests/Pods-Fast NewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE6AB26323769D03C8BADE1 /* Pods_Fast_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B5C99E0E04CE2DCFBF9873 /* Pods-Fast NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast NewsTests.debug.xcconfig"; path = "Target Support Files/Pods-Fast NewsTests/Pods-Fast NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37E2C4092504314F00043FC6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				37E2C40A2504317700043FC6 /* InMemoryDb.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		37E2C40C25043A6900043FC6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				37E2C40D25043A7200043FC6 /* NetworkStatus.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		53349FE0108740DA4B8C12A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +228,8 @@
 		E789E8B8232F47CB0091660E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				37E2C40C25043A6900043FC6 /* Network */,
+				37E2C4092504314F00043FC6 /* Data */,
 				E789E8BE232F480C0091660E /* Model */,
 				E789E8BD232F48070091660E /* View */,
 				E789E8BC232F47FF0091660E /* ViewModel */,
@@ -548,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AFEA9823443ADF00C2E4C3 /* String+Ext.swift in Sources */,
+				37E2C40B2504317700043FC6 /* InMemoryDb.swift in Sources */,
 				37CB7226250071DC006BB426 /* Listing.swift in Sources */,
 				E7EC2F33233302FC009F41B0 /* FeedView.swift in Sources */,
 				E79484702331347300C0D99E /* HotNews.swift in Sources */,
@@ -566,6 +589,7 @@
 				E789E88B232F47A40091660E /* AppDelegate.swift in Sources */,
 				E789E8C4232F49AE0091660E /* FeedDetailsViewController.swift in Sources */,
 				E7EC2F352333030D009F41B0 /* FeedDetailsView.swift in Sources */,
+				37E2C40E25043A7200043FC6 /* NetworkStatus.swift in Sources */,
 				E7ABFD422338947E00AC9B8F /* HotNewsViewModel.swift in Sources */,
 				E7ABFD442338965500AC9B8F /* Int+Ext.swift in Sources */,
 			);

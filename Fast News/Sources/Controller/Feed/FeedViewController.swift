@@ -48,6 +48,11 @@ class FeedViewController: UIViewController {
     
     func loadNews(){
         
+        if !NetworkStatus.shared.isConnected {
+            self.hotNews = InMemoryDb.shared.getHotNews()
+            return
+        }
+        
         if !fetching {
             fetching = true
             
@@ -56,7 +61,12 @@ class FeedViewController: UIViewController {
                     do {
                         let hotNews = try completion()
                         
-                        self.hotNews = hotNews
+                        if hotNews.count > 0 { InMemoryDb.shared.removeAll() }
+                        for news in hotNews {
+                            InMemoryDb.shared.save(model: news)
+                        }
+                        
+                        self.hotNews = InMemoryDb.shared.getHotNews()
                     } catch {
                         print(error.localizedDescription)
                     }
