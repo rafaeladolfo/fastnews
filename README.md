@@ -9,7 +9,7 @@ This repository contains the iOS test source code.
 ### Features
 * Integration with reddit api
 * News viewing
-* Commens listing
+* Comments listing
 * Url Sharing
 
 ### Git strategy
