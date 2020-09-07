@@ -23,4 +23,4 @@ This repository contains the iOS test source code.
 ![ReleaseBranch](https://wac-cdn.atlassian.com/dam/jcr:a9cea7b7-23c3-41a7-a4e0-affa053d9ea7/04%20(1).svg?cdnVersion=1224)
 
 * Result:  
-![NetworkGraph](Screen Shot 2020-09-07 at 16.45.38.png)
+![NetworkGraph](ng.png)
