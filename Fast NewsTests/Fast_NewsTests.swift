@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Fast_News
 
 class Fast_NewsTests: XCTestCase {
 
