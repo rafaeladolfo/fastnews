@@ -26,7 +26,7 @@ This repository contains the iOS test source code.
 ![NetworkGraph](ng.png)
 
 ### Using CICD with github actions
-* Yml file: https://github.com/rafaeladolfo/fastnews/blob/master/.github/workflows/swift.yml
+* yml file: https://github.com/rafaeladolfo/fastnews/blob/master/.github/workflows/swift.yml
 * result:  
 
 ![NetworkGraph](cicd.png)
