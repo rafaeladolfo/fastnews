@@ -2,6 +2,8 @@
 
 This repository contains the iOS test source code.
 
+## Same project in SwiftUI GoTo: https://github.com/rafaeladolfo/FastNewsSwiftUI
+
 ### Stack
 * Using UIKit 
 * Pods
