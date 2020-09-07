@@ -24,7 +24,7 @@ class InMemoryDb_Tests: XCTestCase {
         InMemoryDb.shared.save(model: hotNews)
         
         //then
-        XCTAssert(InMemoryDb.shared.hotNews.count > 0)
+        XCTAssertTrue(InMemoryDb.shared.hotNews.count > 0, "HowNews array should be greater than 0")
     }
     
     func testRemoveAllShouldClearHotNews() {
