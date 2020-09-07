@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Fast_News
 
 class Fast_NewsUITests: XCTestCase {
 
@@ -28,7 +29,7 @@ class Fast_NewsUITests: XCTestCase {
 
     func testExample() {
         // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.                
     }
 
 }
